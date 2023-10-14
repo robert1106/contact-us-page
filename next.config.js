@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const withPlugins = require('next-compose-plugins')
+const withSvgr = require('next-plugin-svgr')
 
-module.exports = nextConfig
+const nextConfig = {
+  images: {
+    domains: ['localhost'].filter(Boolean)
+  }
+}
+
+module.exports = withPlugins([[withSvgr]], nextConfig)
