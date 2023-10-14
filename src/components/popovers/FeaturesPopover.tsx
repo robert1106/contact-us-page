@@ -1,5 +1,7 @@
 'use client'
 import { Popover, Stack } from '@mui/material'
+import { usePathname } from 'next/navigation'
+import { useEffect } from 'react'
 import { Text } from '~/components/base'
 import { MenuLink } from '~/components/common'
 import usePopover from '~/hooks/usePopover'
@@ -12,7 +14,12 @@ import {
 } from '~/utils/constants/paths'
 
 export const FeaturesPopover = () => {
+  const pathname = usePathname()
   const { open, anchorEl, showPopover, hidePopover } = usePopover()
+
+  useEffect(() => {
+    hidePopover()
+  }, [pathname])
 
   return (
     <>

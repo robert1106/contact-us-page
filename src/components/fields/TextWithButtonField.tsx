@@ -44,6 +44,7 @@ export const TextWithButtonField = ({
           onChange={onChange}
           value={value}
           sx={{
+            width: '100%',
             fontSize: '11px',
             fontWeight: 400,
             px: '10px',
@@ -54,7 +55,7 @@ export const TextWithButtonField = ({
         <Button
           variant="contained"
           sx={{
-            minWidth: '105px',
+            maxWidth: '105px',
             fontSize: '12px',
             borderRadius: '0 4px 4px 0',
             height: '100%'
