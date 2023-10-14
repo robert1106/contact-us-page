@@ -12,7 +12,12 @@ type ContactUsFV = z.infer<typeof ContactUsSchema>
 export const ContactUsForm = () => {
   const methods = useForm<ContactUsFV>({
     defaultValues: {
-      subject: 'general_inquiry_1'
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone_number: '',
+      subject: 'general_inquiry_1',
+      message: ''
     },
     resolver: zodResolver(ContactUsSchema),
     mode: 'all'

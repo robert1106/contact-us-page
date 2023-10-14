@@ -12,6 +12,9 @@ type JoinNewsletterFV = z.infer<typeof JoinNewsletterSchema>
 
 export const JoinNewsletterForm = () => {
   const methods = useForm<JoinNewsletterFV>({
+    defaultValues: {
+      email: ''
+    },
     resolver: zodResolver(JoinNewsletterSchema),
     mode: 'all'
   })
