@@ -1,4 +1,8 @@
-import { PATH_ABOUT, PATH_BLOG, PATH_CONTACT } from '~/utils/constants/paths'
+import {
+  PATH_ABOUT,
+  PATH_BLOG,
+  PATH_CONTACT
+} from '~/utils/constants/paths.constants'
 
 export const COMPANY_STATIC_PAGES: StaticPageModel[] = [
   {

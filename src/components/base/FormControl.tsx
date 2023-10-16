@@ -1,3 +1,8 @@
+/**
+ * Сustomization of mui core component "FormControl",
+ * placed in a separate file for reuse
+ */
+
 'use client'
 import {
   FormControl as MuiFormControl,

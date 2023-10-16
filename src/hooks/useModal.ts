@@ -1,3 +1,8 @@
+/**
+ * The useBoolean hook used for handle boolean-based states in React components.
+ */
+
+'use client'
 import { useCallback, useState } from 'react'
 
 type UseModalReturn = [boolean, () => void, () => void]

@@ -10,8 +10,14 @@ const BurgerMenu = () => {
   const pathname = usePathname()
   const [open, showSidebar, hideSidebar] = useSidebar()
 
+  /**
+   * His useEffect is triggered when pathname is changed in "App router",
+   * close Sidebar if it is open
+   */
   useEffect(() => {
-    hideSidebar()
+    if (open) {
+      hideSidebar()
+    }
   }, [pathname])
 
   return (

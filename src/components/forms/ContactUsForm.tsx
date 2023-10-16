@@ -1,4 +1,8 @@
 'use client'
+/**
+ * "Resolver" function allows you to use any external validation library
+ * such as Yup, Zod, Joi, Vest, Ajv and many others.
+ */
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Grid, Stack } from '@mui/material'
 import { FormProvider, useForm } from 'react-hook-form'

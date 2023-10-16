@@ -1,3 +1,10 @@
+/**
+ * The useFormField hook allows you to control and manipulate field values.
+ * Under the hood useFormField relies on react-hook-form context.
+ * That means you need to specify a name for start to control a field.
+ */
+
+'use client'
 import { get } from 'object-path'
 import { ChangeEvent, useCallback } from 'react'
 

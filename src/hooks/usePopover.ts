@@ -1,3 +1,8 @@
+/**
+ * The usePopover hook is used to handle the states of the Popover component.
+ */
+
+'use client'
 import { useState } from 'react'
 
 const usePopover = () => {

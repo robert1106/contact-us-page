@@ -11,7 +11,7 @@ import {
   PATH_BLOG,
   PATH_CONTACT,
   PATH_SHOP
-} from '~/utils/constants/paths'
+} from '~/utils/constants/paths.constants'
 
 const Menu = () => {
   return (

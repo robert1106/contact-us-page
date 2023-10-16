@@ -1,3 +1,11 @@
+/**
+ * Context providers are usually displayed near the application root to
+ * separate global concerns, such as the current topic. Since React context
+ * is not supported in server-side components, trying to create a context
+ * at the application root will result in an error. To solve this problem,
+ * created a context and its provider inside the client component.
+ */
+
 'use client'
 import createCache, { Options } from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
@@ -11,6 +19,8 @@ interface ThemeRegistryProps {
   options: Options
 }
 
+// This implementation is from emotion-js
+// https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
 const ThemeRegistry = (props: ThemeRegistryProps) => {
   const { options, children } = props
 

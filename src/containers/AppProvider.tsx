@@ -1,5 +1,9 @@
+/**
+ * This file stores all the application providers
+ */
+
 import { ReactNode } from 'react'
-import ThemeRegistry from '~/providers/ThemeRegistry'
+import ThemeRegistry from '~/containers/ThemeRegistry'
 
 interface AppProviderProps {
   children: ReactNode

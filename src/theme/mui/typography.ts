@@ -3,6 +3,11 @@ import {
   TypographyOptions,
   Variant
 } from '@mui/material/styles/createTypography'
+/**
+ * Automatically self-host any Google Font. Fonts are included
+ * in the deployment and served from the same domain as your deployment.
+ * No requests are sent to Google by the browser.
+ */
 import { Inter, Manrope, Poppins, Roboto } from 'next/font/google'
 
 const roboto = Roboto({

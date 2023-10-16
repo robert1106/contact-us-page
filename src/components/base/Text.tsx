@@ -1,10 +1,13 @@
+/**
+ * Сustomization of mui core component "Typography",
+ * placed in a separate file for reuse
+ */
+
 'use client'
 import { Typography, TypographyProps } from '@mui/material'
 import { Variant } from '@mui/material/styles/createTypography'
-import { CSSProperties } from '@mui/system/CSSProperties'
 import { ElementType, FC } from 'react'
-
-import { typographyVariant } from '~/theme/mui'
+import { generateStylesBySize } from '~/utils/helpers/mui.helpers'
 
 export type ResponsiveSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
@@ -14,42 +17,8 @@ export interface TextProps extends Omit<TypographyProps, 'size'> {
   lineClamp?: string
 }
 
-const generateStyles = (size: TextProps['size']) => {
-  if (!size) return {}
-
-  if (typeof size === 'object') {
-    const genStyles = Object.entries(size).reduce(
-      (acc, [key, value]) => {
-        return {
-          fontSize: {
-            ...acc.fontSize,
-            [key]: typographyVariant[value].fontSize
-          },
-          lineHeight: {
-            ...acc.lineHeight,
-            [key]: typographyVariant[value].lineHeight
-          },
-          fontFamily: {
-            ...acc.fontFamily,
-            [key]: typographyVariant[value].fontFamily
-          },
-          fontWeight: {
-            ...acc.fontWeight,
-            [key]: typographyVariant[value].fontWeight
-          }
-        }
-      },
-      { fontSize: {}, lineHeight: {}, fontFamily: {}, fontWeight: {} }
-    )
-
-    return genStyles
-  }
-
-  return typographyVariant[size] as CSSProperties
-}
-
 export const Text: FC<TextProps> = ({ size, sx, ...rest }) => {
-  const styles = generateStyles(size)
+  const styles = generateStylesBySize(size)
 
   return <Typography sx={{ ...styles, ...sx }} {...rest} />
 }

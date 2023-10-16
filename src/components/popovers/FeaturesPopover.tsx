@@ -11,14 +11,16 @@ import {
   PATH_BLOG,
   PATH_CONTACT,
   PATH_SHOP
-} from '~/utils/constants/paths'
+} from '~/utils/constants/paths.constants'
 
 export const FeaturesPopover = () => {
   const pathname = usePathname()
   const { open, anchorEl, showPopover, hidePopover } = usePopover()
 
   useEffect(() => {
-    hidePopover()
+    if (open) {
+      hidePopover()
+    }
   }, [pathname])
 
   return (
